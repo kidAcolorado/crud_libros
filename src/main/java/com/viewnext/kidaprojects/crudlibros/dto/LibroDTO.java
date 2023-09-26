@@ -1,7 +1,17 @@
 package com.viewnext.kidaprojects.crudlibros.dto;
 
 
-
+/**
+ * Esta clase representa un objeto de transferencia de datos (DTO) para un libro.
+ * Un objeto LibroDTO contiene información básica sobre un libro, como su ISBN, título y temática.
+ *
+ * <p>
+ * El autor de esta clase es Víctor Colorado "Kid A".
+ * </p>
+ *
+ * @version 1.0
+ * @since 25 de Septiembre de 2023
+ */
 public class LibroDTO {
 	
 	private String isbnDTO;

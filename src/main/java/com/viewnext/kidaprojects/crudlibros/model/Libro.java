@@ -1,7 +1,16 @@
 package com.viewnext.kidaprojects.crudlibros.model;
 
 import java.util.Objects;
-
+/**
+ * Esta clase representa un libro con información sobre su ISBN, título y temática.
+ *
+ * <p>
+ * El autor de esta clase es Víctor Colorado "Kid A".
+ * </p>
+ *
+ * @version 1.0
+ * @since 25 de Septiembre de 2023
+ */
 public class Libro {
 
 	private String isbn;

@@ -22,9 +22,9 @@ public class LibroNotFoundException extends RuntimeException implements Serializ
     /**
      * Crea una nueva instancia de la excepción con el mensaje especificado.
      *
-     * @param codigo El código del curso que no se ha encontrado.
+     * @param argumento El argumento del curso que no se ha encontrado.
      */
-    public LibroNotFoundException(String isbn) {
-        super("El libro con isbn " + isbn + " no ha sido encontrado.");
+    public LibroNotFoundException(String argumento) {
+        super("El libro con el argumento " + argumento + " no ha sido encontrado.");
     }
 }
