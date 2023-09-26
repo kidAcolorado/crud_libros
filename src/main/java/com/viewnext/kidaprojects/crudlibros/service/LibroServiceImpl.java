@@ -75,8 +75,7 @@ public class LibroServiceImpl implements LibroService {
     }
     
     public List<LibroDTO> getLibrosDTO(){
-    	List<LibroDTO> listaLibrosDTO = libroMapper.toListaLibrosDTO(getAllLibros());    	
-		return listaLibrosDTO;
+    	return libroMapper.toListaLibrosDTO(getAllLibros());
     	
     }
 
