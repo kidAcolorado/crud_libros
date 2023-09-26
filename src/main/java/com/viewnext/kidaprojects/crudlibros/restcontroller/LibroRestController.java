@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import org.springframework.web.bind.annotation.ResponseBody;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import com.viewnext.kidaprojects.crudlibros.dto.LibroDTO;
 import com.viewnext.kidaprojects.crudlibros.exception.LibroNotFoundException;
 import com.viewnext.kidaprojects.crudlibros.service.LibroServiceImpl;
 
-import jakarta.persistence.EntityNotFoundException;
+
 
 /**
  * Controlador REST para gestionar operaciones CRUD de libros.
@@ -30,8 +30,7 @@ public class LibroRestController {
 	@Autowired
 	LibroServiceImpl libroServiceImpl;
 
-	private static final String ISBN_NOT_FOUND = "Isbn Not Found";
-	private static final String TITULO_NOT_FOUND = "Título Not Found";
+	
 
 	/**
 	 * Obtiene todos los libros.
