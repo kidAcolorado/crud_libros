@@ -115,7 +115,7 @@ public class LibroRestController {
 	 * @return Una respuesta HTTP sin contenido si se elimina correctamente, o un
 	 *         mensaje de error si el libro no se encuentra.
 	 */
-	@DeleteMapping(value = "value/{isbn}")
+	@DeleteMapping(value = "value/{isbn}", produces = MediaType.APPLICATION_JSON_VALUE )
 	public ResponseEntity<?> deleteLibroByIsbn(@PathVariable("isbn") String isbn) {
 		try {
 			libroServiceImpl.deleteLibroByIsbn(isbn);
