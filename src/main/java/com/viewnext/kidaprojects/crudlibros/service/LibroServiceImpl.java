@@ -11,7 +11,7 @@ import com.viewnext.kidaprojects.crudlibros.exception.LibroNotFoundException;
 import com.viewnext.kidaprojects.crudlibros.mapper.LibroMapper;
 import com.viewnext.kidaprojects.crudlibros.model.Libro;
 
-import jakarta.persistence.EntityNotFoundException;
+
 
 /**
  * Esta clase implementa la interfaz LibroService y proporciona los servicios para la gestión de libros.

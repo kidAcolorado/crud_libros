@@ -34,8 +34,9 @@ import com.viewnext.kidaprojects.crudlibros.service.LibroServiceImpl;
  */
 @RestController
 public class LibroRestController {
+	
     @Autowired
-    LibroServiceImpl libroServiceImpl;
+    private LibroServiceImpl libroServiceImpl;
 
     /**
      * Obtiene todos los libros.

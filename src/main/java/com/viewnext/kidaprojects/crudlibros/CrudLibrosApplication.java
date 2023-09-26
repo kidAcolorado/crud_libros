@@ -3,7 +3,7 @@ package com.viewnext.kidaprojects.crudlibros;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication (scanBasePackages = {"com.viewnext.kidaprojects.crudlibros.restcontroller", "com.viewnext.kidaprojects.crudlibros.service" })
+@SpringBootApplication (scanBasePackages = {"com.viewnext.kidaprojects.crudlibros.restcontroller", "com.viewnext.kidaprojects.crudlibros.service", "com.viewnext.kidaprojects.crudlibros.mapper" })
 public class CrudLibrosApplication {
 
 	public static void main(String[] args) {
