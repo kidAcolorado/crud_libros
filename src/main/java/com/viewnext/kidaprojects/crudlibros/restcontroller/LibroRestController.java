@@ -17,8 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.viewnext.kidaprojects.crudlibros.dto.LibroDTO;
-
-
+import com.viewnext.kidaprojects.crudlibros.exception.LibroNotFoundException;
 import com.viewnext.kidaprojects.crudlibros.service.LibroServiceImpl;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -58,8 +57,8 @@ public class LibroRestController {
 		try {
 			LibroDTO libroDTO = libroServiceImpl.getLibroDTOByIsbn(isbn);
 			return ResponseEntity.ok(libroDTO);
-		} catch (EntityNotFoundException e) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ISBN_NOT_FOUND);
+		} catch (LibroNotFoundException e) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
 		}
 	}
 
@@ -75,8 +74,8 @@ public class LibroRestController {
 		try {
 			LibroDTO libroDTO = libroServiceImpl.getLibroDTOByTitulo(titulo);
 			return ResponseEntity.ok(libroDTO);
-		} catch (EntityNotFoundException e) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(TITULO_NOT_FOUND);
+		} catch (LibroNotFoundException e) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
 		}
 	}
 
@@ -86,8 +85,7 @@ public class LibroRestController {
 	 * @param libro El libro que se va a crear en formato JSON.
 	 * @return Una respuesta HTTP con el libro creado en formato JSON.
 	 */
-	@PostMapping(value = "libro", consumes = MediaType.APPLICATION_JSON_VALUE)
-	@ResponseBody
+	@PostMapping(value = "libro", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> createLibro(@RequestBody LibroDTO libroDTO) {
 		libroServiceImpl.createLibroDTO(libroDTO);
 		return ResponseEntity.ok(libroDTO);
@@ -100,14 +98,13 @@ public class LibroRestController {
 	 * @return Una respuesta HTTP con el libro actualizado en formato JSON si se
 	 *         encuentra, o un mensaje de error si no se encuentra.
 	 */
-	@PutMapping(value = "libro", consumes = MediaType.APPLICATION_JSON_VALUE)
-	@ResponseBody
+	@PutMapping(value = "libro", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> updateLibro(@RequestBody LibroDTO libroDTO) {
 		try {
 			libroServiceImpl.updateLibroDTO(libroDTO);
 			return ResponseEntity.ok(libroDTO);
-		} catch (EntityNotFoundException e) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ISBN_NOT_FOUND);
+		} catch (LibroNotFoundException e) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
 		}
 	}
 
@@ -123,8 +120,8 @@ public class LibroRestController {
 		try {
 			libroServiceImpl.deleteLibroByIsbn(isbn);
 			return ResponseEntity.noContent().build();
-		} catch (EntityNotFoundException e) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ISBN_NOT_FOUND);
+		} catch (LibroNotFoundException e) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
 		}
 	}
 }
